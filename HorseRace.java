@@ -1,5 +1,10 @@
-//import javax.swing.JFrame;
-
+/**
+ * The HorseRace class serves as the entry point for the Horse Racing Simulator.
+ * It allows users to create a race, add horses to the race, and start the race simulation.
+ * 
+ * @author Mohanprasad Baskaran 
+ * @version 24/04/24
+ */
 public class HorseRace {
 
     public static void main(String[] args) {
