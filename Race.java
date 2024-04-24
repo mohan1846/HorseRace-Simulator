@@ -1,3 +1,12 @@
+/**
+ * The Race class simulates a horse race with multiple lanes.
+ * Horses compete to reach the finish line, with their progress 
+ * determined by their confidence level and a probability of falling.
+ * 
+ * @author Mohanprasad Baskaran 
+ * @version Final 24/04/24
+ */
+
 import java.util.concurrent.TimeUnit;
 import java.lang.Math;
 
