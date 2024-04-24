@@ -1,3 +1,11 @@
+/**
+ * The Horse class represents a horse participating in a race. 
+ * Each horse has a name, symbol, confidence level, distance travelled, 
+ * and a status indicating whether it has fallen during the race.
+ * 
+ * @author Mohanprasad Baskaran
+ * @version Final 24/04/24
+ */
 public class Horse {
     private String name;
     private char symbol;
