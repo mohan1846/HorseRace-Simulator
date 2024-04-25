@@ -11,10 +11,10 @@ import java.util.concurrent.TimeUnit;
 import java.lang.Math;
 
 public class Race {
-    public static final double FALL_PROBABILITY_BASE = 0.05;
-    public int numberOfLanes =3;
-    public int raceLength;
-    public Horse[] horses; // Array to manage horses
+    private static final double FALL_PROBABILITY_BASE = 0.05;
+    private int numberOfLanes =3;
+    private int raceLength;
+    private Horse[] horses; // Array to manage horses
 
     public Race(int distance) {
         this.raceLength = distance;
@@ -72,7 +72,7 @@ public class Race {
     }
 
     // Moves the given horse forward and checks for falling probability
-    public void moveHorse(Horse theHorse) {
+    private void moveHorse(Horse theHorse) {
         if (!theHorse.hasFallen()) {
             // Print statements to check the probabilities
             double moveProbability = theHorse.getConfidence();
@@ -93,11 +93,11 @@ public class Race {
     }
 
     // Checks if the given horse has won the race
-    public boolean raceWonBy(Horse theHorse) {
+    private boolean raceWonBy(Horse theHorse) {
         return theHorse.getDistanceTravelled() >= raceLength;
     }
 
-    public void printRace() {
+    private void printRace() {
         clearConsole();
         multiplePrint('=', raceLength + numberOfLanes);
         System.out.println();
@@ -114,14 +114,12 @@ public class Race {
     }
     
     // Clears the console to refresh the race display
-    public void clearConsole() {
-        for (int i = 0; i < 50; i++) {
-            System.out.println();
-        }
+    private void clearConsole() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
     }
 
-
-    public void printLane(Horse theHorse) {
+    private void printLane(Horse theHorse) {
         int spacesBefore = theHorse.getDistanceTravelled();
         int spacesAfter = raceLength - theHorse.getDistanceTravelled();
 
@@ -142,7 +140,7 @@ public class Race {
     }
 
     // Method to print a character multiple times
-    public void multiplePrint(char aChar, int times) {
+    private void multiplePrint(char aChar, int times) {
         for (int i = 0; i < times; i++) {
             System.out.print(aChar);
         }
