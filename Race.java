@@ -20,7 +20,8 @@ public class Race {
         this.raceLength = distance;
         this.horses = new Horse[3];
     }
-
+    
+    // Adds a horse to a specific lane in the race
     public void addHorse(Horse theHorse, int laneNumber) {
         if (laneNumber >= 1 && laneNumber <= horses.length) {
             horses[laneNumber - 1] = theHorse;
@@ -28,7 +29,7 @@ public class Race {
             throw new IllegalArgumentException("Lane number " + laneNumber + " is invalid.");
         }
     }
-
+    // Starts the race
     public void startRace() {
         for (Horse horse : horses) {
             if (horse != null) horse.goBackToStart();
@@ -70,7 +71,7 @@ public class Race {
         }
     }
 
-
+    // Moves the given horse forward and checks for falling probability
     public void moveHorse(Horse theHorse) {
         if (!theHorse.hasFallen()) {
             // Print statements to check the probabilities
@@ -91,7 +92,7 @@ public class Race {
         }
     }
 
-
+    // Checks if the given horse has won the race
     public boolean raceWonBy(Horse theHorse) {
         return theHorse.getDistanceTravelled() >= raceLength;
     }
@@ -111,7 +112,8 @@ public class Race {
         multiplePrint('=', raceLength + numberOfLanes);
         System.out.println();
     }
-
+    
+    // Clears the console to refresh the race display
     public void clearConsole() {
         for (int i = 0; i < 50; i++) {
             System.out.println();
@@ -139,7 +141,7 @@ public class Race {
         System.out.print('|');
     }
 
-
+    // Method to print a character multiple times
     public void multiplePrint(char aChar, int times) {
         for (int i = 0; i < times; i++) {
             System.out.print(aChar);
